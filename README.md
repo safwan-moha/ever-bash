@@ -3,8 +3,7 @@ You can save all your bash commands and retrieve
 
 
 ### installation
-- Step 1: `wget https://raw.githubusercontent.com/safwan-moha/ever-bash/master/install.sh`
-- Step 2: `./install.sh`
+`wget https://raw.githubusercontent.com/safwan-moha/ever-bash/master/install.sh && bash ./install.sh`
 
 
 ### Keywords
