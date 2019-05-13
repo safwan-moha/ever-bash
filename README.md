@@ -21,4 +21,4 @@ This is going to search for tags with `restart`
 
 
 ### Demo - Searching
-![Searching a command](https://raw.githubusercontent.com/safwan-moha/ever-bash/master/docs/save.gif)
+![Searching a command](https://raw.githubusercontent.com/safwan-moha/ever-bash/master/docs/search.gif)
