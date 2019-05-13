@@ -16,5 +16,9 @@ This is going to search for tags with `restart`
 - This command will be copied to your clipboard
 
 
-### Screenshot
+### Demo - Saving
+![Saving a command](https://raw.githubusercontent.com/safwan-moha/ever-bash/master/docs/save.gif)
 
+
+### Demo - Searching
+![Searching a command](https://raw.githubusercontent.com/safwan-moha/ever-bash/master/docs/save.gif)
