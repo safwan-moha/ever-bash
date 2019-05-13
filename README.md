@@ -2,9 +2,9 @@
 You can save all your bash commands and retrieve
 
 ### Keywords
-- Help: save -h
-- Save using: save <command>
-- Copy using: save -s <match>
+- Help: `save -h`
+- Save using: `save <command>`
+- Copy using: `save -s <match>`
 
 
 ### Usage - Saving
