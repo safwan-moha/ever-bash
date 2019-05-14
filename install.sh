@@ -44,6 +44,7 @@ else
 		sh -c "sudo mkdir /var/lib/save"
 	fi
 	sh -c "sudo touch /var/lib/save/history"
+	sh -c "sudo chmod -R 775 /var/lib/save/history"
 	echo "$(tput setaf 2)Installation success$(tput sgr0)"
 	echo "$(tput setaf 4)Please type 'save -h' for help$(tput sgr0)"
 fi
