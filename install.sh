@@ -33,11 +33,15 @@ then
 		echo 'Saved...'
 	fi
 else
+	echo " "
+	echo " "
 	echo "Installing EVER-BASH..."
 	echo " "
 	echo " "
 	sh -c "sudo cp $MY_PATH/install.sh /usr/local/bin/save"
 	sh -c "sudo chmod -R 775 /usr/local/bin/save"
+	sh -c "sudo mkdir /var/lib/save"
+	sh -c "sudo touch /var/lib/save/history"
 	echo "Installation success"
 	echo "Please type 'save -h' for help"
 fi
