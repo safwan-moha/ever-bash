@@ -35,14 +35,16 @@ then
 else
 	echo " "
 	echo " "
-	echo "Installing EVER-BASH..."
+	echo "$(tput setaf 4)Installing EVER-BASH...$(tput sgr0)"
 	echo " "
 	echo " "
 	sh -c "sudo cp $MY_PATH/install.sh /usr/local/bin/save"
 	sh -c "sudo chmod -R 775 /usr/local/bin/save"
-	sh -c "sudo mkdir /var/lib/save"
+	if [ ! -d /var/lib/save ]; then
+		sh -c "sudo mkdir /var/lib/save"
+	fi
 	sh -c "sudo touch /var/lib/save/history"
-	echo "Installation success"
+	echo "$(tput setaf 2)Installation success$(tput sgr0)"
 	echo "$(tput setaf 4)Please type 'save -h' for help$(tput sgr0)"
 fi
 
