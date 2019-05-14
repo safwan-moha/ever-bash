@@ -16,12 +16,12 @@ then
 		result=$(head -${linenum} /var/lib/save/history | tail -1 | tr -d '\012')
 		hay=$(echo $result| cut -d':' -f 2)
 		sh -c "echo $hay | tr -d '\012' | xclip -selection clipboard"
-		echo Copied... $hay
+		echo "$(tput setaf 4)Copied...$(tput sgr0) $hay"
 
 	elif [ $1 = "-h" ]
 	then
-		echo to save: save 'any-command'
-		echo to retrive: save -s 'search-text'
+		echo "$(tput setaf 4)to save: save 'any-command'$(tput sgr0)"
+		echo "$(tput setaf 4)to retrive: save -s 'search-text'$(tput sgr0)"
 	else
 		command=""
 		for ((i=1;i<=$#;i++));
@@ -30,7 +30,7 @@ then
 		done;
 		read -p 'save-name: ' savename
 		sudo sh -c "echo $savename:$command >> /var/lib/save/history"
-		echo 'Saved...'
+		echo "$(tput setaf 4)Saved...$(tput sgr0)"
 	fi
 else
 	echo " "
@@ -43,6 +43,6 @@ else
 	sh -c "sudo mkdir /var/lib/save"
 	sh -c "sudo touch /var/lib/save/history"
 	echo "Installation success"
-	echo "Please type 'save -h' for help"
+	echo "$(tput setaf 4)Please type 'save -h' for help$(tput sgr0)"
 fi
 
