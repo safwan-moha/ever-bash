@@ -4,9 +4,11 @@ You can save all your bash commands and retrieve
 
 ### installation
 for linux
+
 `wget -N https://raw.githubusercontent.com/safwan-moha/ever-bash/master/install.sh && bash ./install.sh`
 
 for OSx
+
 `soon...`
 
 
