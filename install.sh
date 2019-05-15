@@ -8,17 +8,17 @@ then
 	then
 		if [ "$2" = "" ]
 		then
-			echo "Wrong usage... $(tput setaf 2)to search: save -s 'search-text'$(tput sgr0)"
+			echo "$(tput setaf 1)Wrong usage:$(tput sgr0) $(tput setaf 2)to search: save -s 'search-text'$(tput sgr0)"
 		else
 			search=""
 			for ((i=2;i<=$#;i++));
 			do
 				search="$search ${!i}"
 			done;
-			sh -c "grep $search /var/lib/save/history -m 10 -n -i | sed 's/:/  :/'"
+			sh -c "grep $search /var/lib/save/history -m 20 -n -i | sed 's/:/  :/'"
 			read -p 'copy line: ' linenum
 			result=$(head -${linenum} /var/lib/save/history | tail -1 | tr -d '\012')
-			hay=$(echo $result| cut -d':' -f 2)
+			hay=$(echo $result| cut -d'#' -f 2)
 			sh -c "echo $hay | tr -d '\012' | xclip -selection clipboard"
 			echo "$(tput setaf 4)Copied:$(tput sgr0) $(tput setaf 1)$hay$(tput sgr0)"
 		fi
@@ -37,7 +37,7 @@ then
 			command="$command ${!i}"
 		done;
 		read -p 'save-name: ' savename
-		sudo sh -c "echo $savename:$command >> /var/lib/save/history"
+		sudo sh -c "echo $savename#$command >> /var/lib/save/history"
 		echo "$(tput setaf 4)Saved...$(tput sgr0)"
 	fi
 else
