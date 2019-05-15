@@ -1,5 +1,7 @@
 ### EVER BASH
-You can save all your bash commands and retrieve. You dont need a text editor to save your codes.
+- You can save all your bash commands easily.
+- Very easily retrieve saved commands
+- No need of a text editor to save your codes anymore.
 
 
 ### Installation
