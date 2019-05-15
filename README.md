@@ -2,7 +2,7 @@
 You can save all your bash commands and retrieve
 
 
-### installation
+### Installation
 for linux
 
 `wget -N https://raw.githubusercontent.com/safwan-moha/ever-bash/master/install.sh && bash ./install.sh`
