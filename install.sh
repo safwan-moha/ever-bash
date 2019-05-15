@@ -37,6 +37,7 @@ else
 	echo " "
 	echo "$(tput setaf 4)Installing EVER-BASH...$(tput sgr0)"
 	echo " "
+	sh -c "sudo apt-get install xclip"
 	echo " "
 	sh -c "sudo cp $MY_PATH/install.sh /usr/local/bin/save"
 	sh -c "sudo chmod -R 775 /usr/local/bin/save"
