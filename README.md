@@ -1,5 +1,5 @@
 ### EVER BASH
-You can save all your bash commands and retrieve
+You can save all your bash commands and retrieve. You dont need a text editor to save your codes.
 
 
 ### Installation
@@ -16,6 +16,7 @@ for OSx
 - Help: `save -h`
 - Save using: `save <command>`
 - Copy using: `save -s <match>`
+- Delete using: `save -d <match>`
 
 
 ### Usage - Saving
