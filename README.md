@@ -16,7 +16,12 @@ for OSx
 
 ### Keywords
 - Help: `save -h`
+
+- Save using: `save`
+will save the last command
 - Save using: `save <command>`
+will save the specified command
+
 - Copy using: `save -s <match>`
 - Delete using: `save -d <match>`
 
