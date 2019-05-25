@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/bash -i
 
 MY_PATH=`( cd "$MY_PATH" && pwd )`
 
 if [ "/usr/local/bin/save" = "$0" ]
 then
-	if [ $1 = "-s" ]
+	if [ "$1" = "-s" ]
 	then
 		if [ "$2" = "" ]
 		then
@@ -22,18 +22,22 @@ then
 			sh -c "echo $hay | tr -d '\012' | xclip -selection clipboard"
 			echo "$(tput setaf 4)Copied:$(tput sgr0) $(tput setaf 1)$hay$(tput sgr0)"
 		fi
-	elif [ $1 = "-d" ]
+	elif [ "$1" = "-d" ]
 	then
 		echo "Delete feature under development"
-	elif [ $1 = "-h" ]
+	elif [ "$1" = "-h" ]
 	then
 		echo "$(tput setaf 4)to save: save 'any-command'$(tput sgr0)"
 		echo "$(tput setaf 4)to search: save -s 'search-text'$(tput sgr0)"
 		echo "$(tput setaf 4)to delete: save -d 'search-text'$(tput sgr0)"
 	else
-		if [ "$2" = "" ]
+		if [ "$1" = "" ]
 		then
-			echo "$(tput setaf 1)Wrong usage:$(tput sgr0) $(tput setaf 2)to search: save -s 'search-text'$(tput sgr0)"
+			# set -H
+			# HISTFILE=~/.bash_history
+			set -o history
+			sh -c 'history -a'
+			history -a
 			command=$(history | tail -n 2 | head -n 1 | while read c1 c2; do echo $c2; done)
 			echo "$(tput setaf 4)Last command: $(tput sgr0) $command"
 			read -p 'save-name: ' savename
@@ -59,7 +63,7 @@ else
 	echo " "
 	sh -c "sudo cp $MY_PATH/install.sh /usr/local/bin/save"
 	sh -c "sudo chmod -R 775 /usr/local/bin/save"
-	if [ ! -d /var/lib/save ]; then
+	if [ ! -d ~/.save ]; then
 		sh -c "mkdir ~/.save"
 	fi
 	sh -c "touch ~/.save/history"
